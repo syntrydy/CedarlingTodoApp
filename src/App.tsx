@@ -8,10 +8,8 @@ import { cedarlingClient } from "./cedarling/CedarlingClient";
 import bootstrap from "./cedarling/bootstrap.json";
 function App() {
   useEffect(() => {
-    if (
-      import.meta.env.VITE_APP_ENFORCE_WITH_CEDARLING &&
-      import.meta.env.VITE_APP_ENFORCE_WITH_CEDARLING === "true"
-    ) {
+    const enforce = import.meta.env.VITE_APP_ENFORCE_WITH_CEDARLING;
+    if (enforce && enforce === "true") {
       cedarlingClient.initialize(bootstrap).catch(console.error);
     }
   }, []);

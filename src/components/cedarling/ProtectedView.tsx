@@ -9,30 +9,33 @@ function ProtectedView({
   loadingFallback = <div>Loading...</div>,
 }: any) {
   const { authorize, isLoading, error } = useCedarling();
+  const { user } = useAuth();
   const [isAuthorized, setIsAuthorized] = React.useState(false);
 
   React.useEffect(() => {
-    const { user } = useAuth();
     const checkAuthorization = async (user: any) => {
       const request = {
         tokens: {
-          access_token: null,
-          id_token: null,
           userinfo_token: user.userInfoToken,
         },
-        action: actionId ? "Todo::Action::" + actionId : "Todo::Action::'view'",
-        resource: { type: "UIComponent", id: resourceId, name: resourceId },
+        action: `TodoApp::Action::"${actionId}"`,
+        resource: {
+          type: "TodoApp::TodoItem",
+          id: resourceId,
+          author: user.userInfo.email,
+        },
         context: {},
       };
       try {
         const result = await authorize(request);
+        console.log("Authorization result: ", result);
         setIsAuthorized(typeof result === "boolean" ? result : result.decision);
       } catch (err) {
         setIsAuthorized(false);
       }
     };
     checkAuthorization(user);
-  }, [authorize, actionId, resourceId]);
+  }, [authorize, actionId, resourceId, user]);
   if (isLoading) return <>{loadingFallback}</>;
   if (error) return <></>;
   if (!isAuthorized) return <></>;

@@ -1,9 +1,26 @@
 {
   "CEDARLING_APPLICATION_NAME": "CedarlingTodoApp",
-  "CEDARLING_POLICY_STORE_URI": "https://raw.githubusercontent.com/Gasmyr/PolicyRepo/refs/heads/agama-lab-policy-designer/4c996315c8165b5f79a960bb62769c39a054ce7b8550.json",
-  "CEDARLING_POLICY_STORE_ID": "4c996315c8165b5f79a960bb62769c39a054ce7b8550",
+  "CEDARLING_POLICY_STORE_URI": "https://raw.githubusercontent.com/Gasmyr/PolicyRepo/refs/heads/agama-lab-policy-designer/434a7eed9f7bb98812f9001fca88524427008f332e0e.json",
+  "CEDARLING_POLICY_STORE_ID": "434a7eed9f7bb98812f9001fca88524427008f332e0e",
   "CEDARLING_USER_AUTHZ": "enabled",
   "CEDARLING_WORKLOAD_AUTHZ": "disabled",
   "CEDARLING_USER_WORKLOAD_BOOLEAN_OPERATION": "OR",
-  "CEDARLING_MAPPING_WORKLOAD": "Workload"
+  "CEDARLING_ID_TOKEN_TRUST_MODE": "none",
+  "CEDARLING_PRINCIPAL_BOOLEAN_OPERATION": {
+    "or": [
+      { "===": [{ "var": "Jans::User" }, "ALLOW"] },
+      { "===": [{ "var": "Jans::Workload" }, "ALLOW"] }
+    ]
+  },
+  "CEDARLING_TOKEN_CONFIGS": {
+    "access_token": {
+      "entity_type_name": "Jans::Access_token"
+    },
+    "id_token": {
+      "entity_type_name": "Jans::Id_token"
+    },
+    "userinfo_token": {
+      "entity_type_name": "Jans::Userinfo_token"
+    }
+  }
 }

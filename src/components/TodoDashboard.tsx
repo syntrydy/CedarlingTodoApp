@@ -14,6 +14,7 @@ import ViewIcon from "@mui/icons-material/Visibility";
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import TodoDetailDialog from "./TodoDetailDialog";
+import ProtectedView from "./cedarling/ProtectedView";
 
 interface Todo {
   id: string;
@@ -66,6 +67,7 @@ function TodoDashboard() {
             />
           </Grid>
           <Grid xs={3} md={3}>
+            <ProtectedView actionId="Add" resourceId="add-task">
             <Button
               startIcon={<AddIcon />}
               size="small"
@@ -96,7 +98,7 @@ function TodoDashboard() {
                       id: crypto.randomUUID(),
                       createdAt: new Date(),
                       updatedAt: new Date(),
-                      author: user?.userInfo?.name || "Anonymous",
+                      author: user?.userInfo?.email || "anonymous@cedarling.com",
                       title: taskInput.value,
                       completed: false,
                     },
@@ -110,6 +112,7 @@ function TodoDashboard() {
             >
               Save
             </Button>
+            </ProtectedView>
           </Grid>
         </Grid>
       </Paper>

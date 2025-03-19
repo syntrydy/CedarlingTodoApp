@@ -5,7 +5,6 @@ import {
   DialogContent,
   DialogTitle,
   Grid,
-  Typography,
 } from "@mui/material";
 
 interface Todo {

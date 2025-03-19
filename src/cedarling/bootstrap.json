@@ -1,0 +1,9 @@
+{
+  "CEDARLING_APPLICATION_NAME": "CedarlingTodoApp",
+  "CEDARLING_POLICY_STORE_URI": "https://raw.githubusercontent.com/Gasmyr/PolicyRepo/refs/heads/agama-lab-policy-designer/4c996315c8165b5f79a960bb62769c39a054ce7b8550.json",
+  "CEDARLING_POLICY_STORE_ID": "4c996315c8165b5f79a960bb62769c39a054ce7b8550",
+  "CEDARLING_USER_AUTHZ": "enabled",
+  "CEDARLING_WORKLOAD_AUTHZ": "disabled",
+  "CEDARLING_USER_WORKLOAD_BOOLEAN_OPERATION": "OR",
+  "CEDARLING_MAPPING_WORKLOAD": "Workload"
+}

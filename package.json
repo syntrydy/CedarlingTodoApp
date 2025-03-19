@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@janssenproject/cedarling_wasm": "^0.0.1",
     "@mui/icons-material": "^6.4.8",
     "@mui/material": "^6.4.8",
     "@react-oauth/google": "^0.12.1",
@@ -19,7 +20,8 @@
     "jwt-js-decode": "^1.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.3.0"
+    "react-router-dom": "^7.3.0",
+    "vite-plugin-wasm": "^3.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

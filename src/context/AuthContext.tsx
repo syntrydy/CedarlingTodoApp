@@ -20,7 +20,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const login = (token: string) => {
     setIsAuthenticated(true);
     const response = decode(token);
-    setUser(response.payload);
+    setUser({ userInfo: response.payload, userInfoToken: token });
   };
 
   const logout = () => {

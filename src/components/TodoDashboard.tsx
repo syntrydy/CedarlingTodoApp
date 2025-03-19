@@ -24,6 +24,7 @@ interface Todo {
   completed: boolean;
 }
 function TodoDashboard() {
+  const { user } = useAuth();
   const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
   const [openDetailDialog, setOpenDetailDialog] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
@@ -37,10 +38,10 @@ function TodoDashboard() {
       completed: true,
     },
   ];
-
   const [todoList, setTodoList] = useState(initialTodoList);
-  const { user } = useAuth();
-  console.log("current user", user);
+
+  
+
   return (
     <Container
       style={{
@@ -95,7 +96,7 @@ function TodoDashboard() {
                       id: crypto.randomUUID(),
                       createdAt: new Date(),
                       updatedAt: new Date(),
-                      author: user?.name || "Anonymous",
+                      author: user?.userInfo?.name || "Anonymous",
                       title: taskInput.value,
                       completed: false,
                     },

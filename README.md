@@ -32,19 +32,25 @@ npm install
 ```bash
 npm run dev
 ```
-4. Availables branches
+4. Environments variables
+   
+   We have two environments variables:
+   - VITE_APP_GOOGLE_CLIENT_ID: For Google Social login
+   - VITE_APP_ENFORCE_WITH_CEDARLING : To enforce access using cedarling(WASM)
+     
+5. Availables branches
 
    - `main`: contains the TODO App without any  cedarling related code
    - `cedarling`: contains the TODO App with cedarling integrate and access enforce with cedarling
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
+6. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-5. Demo Access
- 
- We have the version enforce with cedarling deploy on vercel 
- It is accessible [here](https://cedarling-todo-app.vercel.app).
+7. Demo Access
+   
+    We have a version which is enforce with cedarling deployed on vercel.
+    It is accessible [here](https://cedarling-todo-app.vercel.app).
 
-6. Cedarling
+8. Cedarling
     - Policies
       The policy store used is availables [here](https://raw.githubusercontent.com/Gasmyr/PolicyRepo/refs/heads/agama-lab-policy-designer/434a7eed9f7bb98812f9001fca88524427008f332e0e.json) with its policies
     - Actions diagrams

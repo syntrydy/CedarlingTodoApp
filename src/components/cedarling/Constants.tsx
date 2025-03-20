@@ -19,7 +19,7 @@ export const initialTodoList = [
     createdAt: new Date(),
     updatedAt: new Date(),
     author: "thomas@gluu.org",
-    title: "Install vite-wasm-plugin with npm",
+    title: "Install vite-wasm-plugin",
     completed: true,
   },
   {

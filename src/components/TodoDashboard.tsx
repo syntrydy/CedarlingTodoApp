@@ -146,20 +146,22 @@ function TodoDashboard() {
                 resourceId="complete-task"
                 todoItem={todo}
               >
-                <Grid xs={1} md={1}>
-                  <Checkbox
-                    checked={todo.completed}
-                    onChange={() => {
-                      setTodoList(
-                        todoList.map((t) =>
-                          t.id === todo.id
-                            ? { ...t, completed: !t.completed }
-                            : t
-                        )
-                      );
-                    }}
-                  />
-                </Grid>
+                {todo.completed === false && (
+                  <Grid xs={1} md={1}>
+                    <Checkbox
+                      checked={todo.completed}
+                      onChange={() => {
+                        setTodoList(
+                          todoList.map((t) =>
+                            t.id === todo.id
+                              ? { ...t, completed: !t.completed }
+                              : t
+                          )
+                        );
+                      }}
+                    />
+                  </Grid>
+                )}
               </ProtectedView>
               <Grid xs={8} md={8}>
                 <Typography

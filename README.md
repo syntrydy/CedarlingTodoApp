@@ -20,7 +20,7 @@ A simple todo list application built with React, TypeScript, and Vite.
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:syntrydy/CedarlingTodoApp.git
 ```
 
 2. Install dependencies:
@@ -32,8 +32,44 @@ npm install
 ```bash
 npm run dev
 ```
+4. Availables branches
+
+   - `main`: contains the TODO App without any  cedarling related code
+   - `cedarling`: contains the TODO App with cedarling integrate and access enforce with cedarling
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+5. Demo Access
+ 
+ We have the version enforce with cedarling deploy on vercel 
+ It is accessible [here](https://cedarling-todo-app.vercel.app).
+
+6. Cedarling
+
+    - Actions diagrams
+      
+    -  Custom enities
+    ```
+      "TodoItem": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "author": {
+              "type": "String"
+            },
+            "completed": {
+              "type": "Boolean"
+            }
+          }
+        }
+      },
+      "TodoList": {
+        "shape": {
+          "type": "Record",
+          "attributes": {}
+        }
+      }  
+    ```
 
 ## Available Scripts
 

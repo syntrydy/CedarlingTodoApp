@@ -45,9 +45,11 @@ npm run dev
  It is accessible [here](https://cedarling-todo-app.vercel.app).
 
 6. Cedarling
-
+    - Policies
+      The policy store used is availables [here](https://raw.githubusercontent.com/Gasmyr/PolicyRepo/refs/heads/agama-lab-policy-designer/434a7eed9f7bb98812f9001fca88524427008f332e0e.json) with its policies
     - Actions diagrams
-      
+      ![image](https://github.com/user-attachments/assets/366f2136-7076-4d0f-a80f-0c542efdc870)
+
     -  Custom enities
     ```
       "TodoItem": {

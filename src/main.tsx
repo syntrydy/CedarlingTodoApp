@@ -9,11 +9,13 @@ const theme = createTheme();
 const googleClientId = import.meta.env.VITE_APP_GOOGLE_CLIENT_ID;
 
 createRoot(document.getElementById("root")!).render(
-  <GoogleOAuthProvider clientId={googleClientId}>
-    <ThemeProvider theme={theme}>
-      <AuthProvider>
+  <StrictMode>
+    <GoogleOAuthProvider clientId={googleClientId}>
+      <ThemeProvider theme={theme}>
+        <AuthProvider>
         <App />
-      </AuthProvider>
-    </ThemeProvider>
-  </GoogleOAuthProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </GoogleOAuthProvider>
+  </StrictMode>
 );

@@ -6,7 +6,6 @@ import { Navigate } from "react-router-dom";
 
 function Home() {
   const { isAuthenticated, login, logout } = useAuth();
-
   const handleLoginSuccess = (response: CredentialResponse) => {
     if (response.credential) {
       login(response.credential);

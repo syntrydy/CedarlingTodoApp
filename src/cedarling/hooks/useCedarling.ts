@@ -12,7 +12,6 @@ export function useCedarling() {
       try {
         const enforce = import.meta.env.VITE_APP_ENFORCE_WITH_CEDARLING;
         if (enforce && enforce === "true") {
-          console.log("Request: ", request);
           return await cedarlingClient.authorize(request);
         }
         return true;

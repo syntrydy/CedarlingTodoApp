@@ -23,6 +23,7 @@ import {
   ACTION_UPDATE,
   ACTION_USE,
   ACTION_VIEW_DETAILS,
+  initialTodoList,
 } from "./cedarling/Constants";
 
 interface Todo {
@@ -38,16 +39,6 @@ function TodoDashboard() {
   const [editingTodo, setEditingTodo] = useState<Todo | null>(null);
   const [openDetailDialog, setOpenDetailDialog] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
-  const initialTodoList = [
-    {
-      id: crypto.randomUUID(),
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      author: "gasmyrmougang@gmail.com",
-      title: "import cedarling wasm",
-      completed: true,
-    },
-  ];
   const [todoList, setTodoList] = useState(initialTodoList);
 
   return (
@@ -55,6 +46,7 @@ function TodoDashboard() {
       style={{
         backgroundColor: "white",
         borderRadius: "10px",
+        width: "80%",
         padding: "20px",
         marginTop: "20px",
       }}
